@@ -1,0 +1,40 @@
+
+	{embed="includes/.head" blog="blog"}
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="{path='blog/rss2'}" />
+
+</head>
+<body>
+
+{embed="includes/.header" template_group="blog"}
+
+<div class="container_12" id="contentwrapper">
+	<div class="grid_8 content">
+
+		<h2>{lang:search_results}:</h2>
+		<span>Your search for <strong>{exp:search:keywords}</strong> resulted in <strong>{exp:search:total_results}</strong> search results</span>
+		<span></span>
+		{exp:search:search_results switch="resultRowOne|resultRowTwo"}
+			<div class="{switch}">
+				<h3><a href="{auto_path}">{title}</a></h3>
+				<p>{excerpt}</p>
+				<p>Posted by: <a href="{member_path='member/index'}">{author}</a> on {entry_date format="%m/%d/%y"}</p>
+			</div>
+		{/exp:search:search_results}
+
+		{if paginate}
+		<div class='paginate'>
+			<span class='pagecount'>{page_count}</span>&nbsp; {paginate}
+		</div>
+		{/if}
+
+
+	</div>
+	{embed="includes/.blogsidebar" template_group="blog" blog="blog"}
+	<div class="clear"></div>
+</div>
+{embed="includes/.footer"}
+{embed="includes/.analytics"}
+</body>
+</html>
+
+

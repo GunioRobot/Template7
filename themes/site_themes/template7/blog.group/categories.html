@@ -1,0 +1,26 @@
+	{embed="includes/.head"}
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="{path=blog/rss2}">
+	<title>{categorylisttitle}</title>
+
+</head>
+<body>
+
+{embed="includes/.header"}
+
+<div class="container_12" id="contentwrapper">
+	<div class="grid_8 content">
+		<h2 class="sidetitle">Categories</h2>
+		{exp:channel:category_archive channel="blog" id="categorylist"}
+			{categories}<h4>{category_name}</h4>{/categories}
+			{entry_titles}<a href="{path='blog/comments'}">{title}</a>{/entry_titles}
+		{/exp:channel:category_archive}
+		<p><a href="{homepage}">&lt;&lt; Back to main</a></p>
+	</div>
+	{embed="includes/.blogsidebar"}
+	<div class="clear"></div>
+</div>
+{embed="includes/.footer"}
+
+</body>
+</html>
+

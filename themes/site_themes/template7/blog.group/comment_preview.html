@@ -1,0 +1,81 @@
+	{embed="includes/.head"}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{path='blog/rss2'}">
+
+  </head>
+<body>
+	{embed="includes/.header"}
+
+
+<div class="container_12" id="contentwrapper">
+<div class="grid_8 content">
+
+<div class="entry">
+{exp:comment:preview}
+{comment}
+{/exp:comment:preview}
+</div>
+
+<div class="entry">
+{exp:comment:form}
+
+{if logged_out}
+<p>
+Name:<br />
+<input type="text" name="name" value="{name}" size="50" />
+</p>
+<p>
+Email:<br />
+<input type="text" name="email" value="{email}" size="50" />
+</p>
+<p>
+Location:<br />
+<input type="text" name="location" value="{location}" size="50" />
+</p>
+<p>
+URL:<br />
+<input type="text" name="url" value="{url}" size="50" />
+</p>
+
+{/if}
+
+<p>
+<a href="{path='blog/smileys'}" onclick="window.open(this.href, '_blank', 'width=400,height=440');return false;" onkeypress="this.onclick()">Smileys</a>
+</p>
+
+<p>
+<textarea name="comment" cols="50" rows="12">{comment}</textarea>
+</p>
+
+{if logged_out}
+<p><input type="checkbox" name="save_info" value="yes" {save_info} /> Remember my personal information</p>
+{/if}
+
+<p><input type="checkbox" name="notify_me" value="yes" {notify_me} /> Notify me of follow-up comments?</p>
+
+{if captcha}
+<p>Submit the word you see below:</p>
+<p>
+{captcha}
+<br />
+<input type="text" name="captcha" value="" size="20" maxlength="20" style="width:140px;" />
+</p>
+{/if}
+
+<input type="submit" name="submit" value="Submit" />
+<input type="submit" name="preview" value="Preview" />
+
+{/exp:comment:form}
+</div>
+
+<p><a href="{homepage}">&lt;&lt; Back to main</a></p>
+
+
+</div>
+	{embed="includes/.blogsidebar"}
+	<div class="clear"></div>
+</div>
+
+	{embed="includes/.footer"}
+{embed="includes/.analytics"}
+</body>
+</html>

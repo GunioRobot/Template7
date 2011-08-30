@@ -1,0 +1,10 @@
+<h3>Members:</h3>
+{if logged_in}
+ <a href="{path='member/profile'}">Your Account</a>  |  <a href="{path='logout'}">Logout</a>
+{/if}
+
+{if logged_out}
+ <a href="{path='member/login'}">Login</a> | <a href="{path='member/register'}">Register</a>
+{/if}
+
+ | <a href="{path='member/memberlist'}">Member List</a>

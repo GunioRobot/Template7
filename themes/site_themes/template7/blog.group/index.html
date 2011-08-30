@@ -1,0 +1,47 @@
+	{embed="includes/.head"}
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="{path=blog/rss2}">
+
+</head>
+<body>
+
+{embed="includes/.header" template_group="blog"}
+
+<div class="container_12" id="contentwrapper">
+	<div class="grid_8 content">
+		{exp:channel:category_heading channel="blog"}
+			<h2>Category: {category_name}</h2>
+			{if category_description}
+				<p>{category_description}</p>
+			{/if}
+		{/exp:channel:category_heading}
+
+		{exp:channel:entries channel="blog" orderby="date" sort="desc" limit="10" url_title="not about|contact"}
+			<div class="entry">
+				<h2 class="title"><a href="{title_permalink='blog/comments'}">{title}</a></h2>
+				{summary}
+				{body}
+				{extended}
+				<div class="posted">Posted by {author} on {entry_date format='%m/%d'} at {entry_date format='%h:%i %A'}
+					{categories}
+						<a href="{path=site_index}">{category_name}</a> &#8226;
+					{/categories}
+					{if allow_comments}
+						({comment_total}) <a href="{url_title_path='blog/comments'}">Comments</a> &#8226;
+					{/if}
+					<a href="{title_permalink='blog'}">Permalink</a>
+				</div>
+				{paginate}
+					<div class="paginate">
+						<span class="pagecount">Page {current_page} of {total_pages} pages</span>  {pagination_links}
+					</div>
+				{/paginate}
+			</div>
+		{/exp:channel:entries}
+	</div>
+	{embed="includes/.blogsidebar" template_group="blog" blog="blog"}
+	<div class="clear"></div>
+</div>
+{embed="includes/.footer"}
+{embed="includes/.analytics"}
+</body>
+</html>

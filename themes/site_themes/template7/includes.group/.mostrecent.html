@@ -1,0 +1,6 @@
+<h3 class="sidetitle">Most recent entries</h3>
+<ul>
+{exp:channel:entries orderby="date" sort="desc" limit="7" channel="blog" dynamic="off" disable="pagination|categories|member_data" url_title="not about|contact"}
+<li><a href="{title_permalink='blog/comments'}">{title}</a></li>
+{/exp:channel:entries}
+</ul>

@@ -1,0 +1,24 @@
+<h3>Calendar:</h3>
+{exp:channel:calendar switch="calendarToday|calendarCell"}
+
+<table class="calendarBG" border="0" cellpadding="5" cellspacing="1" id="calendar">
+<tr>
+<th class="calendarHeader"><div class="calendarMonthLinks"><a href="{previous_path='blog/index'}">&lt;&lt;</a></div></th>
+<th class="calendarHeader" colspan="5">{date format="%F %Y"}</th>
+<th class="calendarHeader"><div class="calendarMonthLinks"><a class="calendarMonthLinks" href="{next_path='blog/index'}">&gt;&gt;</a></div></th>
+</tr>
+<tr>
+{calendar_heading}
+<td class="calendarDayHeading">{lang:weekday_abrev}</td>
+{/calendar_heading}
+</tr>
+{calendar_rows }
+{row_start}<tr>{/row_start}
+{if entries}<td class='{switch}' align='center'><a href="{day_path='blog/index'}">{day_number}</a></td>{/if}
+{if not_entries}<td class='{switch}' align='center'>{day_number}</td>{/if}
+{if blank}<td class='calendarBlank'>&nbsp;</td>{/if}
+{row_end}</tr>{/row_end}
+{/calendar_rows}
+</table>
+{/exp:channel:calendar}
+

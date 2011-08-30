@@ -1,0 +1,27 @@
+
+	{embed="includes/.head"}
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="{path={my_template_group}/rss2}">
+
+</head>
+<body>
+
+{embed="includes/.header"}
+
+<div class="container_12" id="contentwrapper">
+	<div class="grid_8 content">
+		{exp:weblog:entries weblog="blog" url_title="about"}
+			<div class="entry">
+				<h2 class="title">{title}</h2>
+				{summary}
+				{body}
+				{extended}
+			</div>
+		{/exp:weblog:entries}
+	</div>
+	{embed="includes/.blogsidebar"}
+	<div class="clear"></div>
+</div>
+{embed="includes/.footer"}
+{embed="includes/.analytics"}
+</body>
+</html>

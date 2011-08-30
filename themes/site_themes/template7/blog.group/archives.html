@@ -1,0 +1,34 @@
+
+	{embed="includes/.head"}
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="{path='blog/rss2}'">
+	<title>{archivelisttitle}</title>
+
+</head>
+<body>
+
+{embed="includes/.header"}
+
+<div class="container_12" id="contentwrapper">
+	<div class="grid_8 content">
+		<h2>By Date:</h2>
+		{exp:channel:entries orderby="date" channel="blog" url_title="not about|contact" sort="desc" limit="100" disable="pagination|custom_fields|categories|member_data"}
+			{date_heading display="yearly"}
+				<h4 class="title">{entry_date format="%Y"}</h2>
+			{/date_heading}
+
+			{date_heading display="monthly"}
+				<h5 class="date">{entry_date format="%F"}</h3>
+				<ul class="archivelist">
+			{/date_heading}
+			<li><a href="{title_permalink='blog/index'}">{entry_date format="%d"} / {title}</a></li>
+		{/exp:channel:entries}
+		</ul>
+	</div>
+	{embed="includes/.blogsidebar"}
+	<div class="clear"></div>
+</div>
+{embed="includes/.footer"}
+{embed="includes/.analytics"}
+</body>
+</html>
+

@@ -1,0 +1,132 @@
+
+	{embed="includes/.head"}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{path={my_template_group}/rss2}">
+
+  </head>
+<body>
+	{embed="includes/.header"}
+
+
+<div class="container_12" id="contentwrapper">
+<div class="grid_8 content">
+
+{exp:channel:entries limit="1"}
+<div class="entry">
+<h2 class="title">{title}</h2>
+
+{summary}
+
+{body}
+
+<div class="posted">
+<p>Posted by {author} on {entry_date format='%m/%d'} at {entry_date format='%h:%i %A'}</p>
+</div>
+</div>
+{/exp:channel:entries}
+
+<div class="related">
+	<h4>Related Posts</h4>
+	<ul>
+		{exp:channel:entries related_categories_mode="on" channel="blog" limit="10" orderby="edit_date"}
+			<li><a href="{title_permalink='blog/comments'}"><strong>{title}</strong> Posted by {author} on {edit_date format="%Y-%m-%d"}</a></li>
+		{/exp:channel:entries}
+	</ul>
+</div>
+
+{exp:comment:entries channel="blog" limit="10"}
+<div class="grid_8 alpha omega commentwrapper">
+	<div class="grid_3 commentposted alpha"><p>{url_as_author}</p><p>{comment_date format='%m/%d'} &nbsp;at&nbsp; {comment_date format='%h:%i %A'}</p></div>
+	<div class="grid_5 comment omega">{comment}</div>
+
+
+{paginate}
+<div class="paginate">
+<span class="pagecount">Page {current_page} of {total_pages} pages</span>  {pagination_links}
+</div>
+{/paginate}
+
+</div>
+
+{/exp:comment:entries}
+
+
+<div class="entry">
+{exp:comment:form preview="blog/comment_preview"}
+
+{if logged_out}
+<p>
+Name:<br />
+<input type="text" name="name" value="{name}" size="50" />
+</p>
+<p>
+Email:<br />
+<input type="text" name="email" value="{email}" size="50" />
+</p>
+<p>
+Location:<br />
+<input type="text" name="location" value="{location}" size="50" />
+</p>
+<p>
+URL:<br />
+<input type="text" name="url" value="{url}" size="50" />
+</p>
+
+{/if}
+
+<p>
+<a href="{path=blog/smileys}" onclick="window.open(this.href, '_blank', 'width=400,height=440');return false;" onkeypress="this.onclick()">Smileys</a>
+</p>
+
+
+<p>
+<textarea name="comment" cols="50" rows="12">{comment}</textarea>
+</p>
+
+{if logged_out}
+<p><input type="checkbox" name="save_info" value="yes" {save_info} /> Remember my personal information</p>
+{/if}
+
+<p><input type="checkbox" name="notify_me" value="yes" {notify_me} /> Notify me of follow-up comments?</p>
+
+{if captcha}
+<p>Submit the word you see below:</p>
+<p>
+{captcha}
+<br />
+<input type="text" name="captcha" value="" size="20" maxlength="20" style="width:140px;" />
+</p>
+{/if}
+
+<input type="submit" name="submit" value="Submit" />
+<input type="submit" name="preview" value="Preview" />
+
+{/exp:comment:form}
+
+</div>
+
+
+<div class="center">
+
+{exp:channel:next_entry weblog="blog"}
+<p>Next entry: <a href="{path='blog/comments'}">{title}</a></p>
+{/exp:channel:next_entry}
+
+{exp:channel:prev_entry weblog="blog"}
+<p>Previous entry: <a href="{path='blog/comments'}">{title}</a></p>
+{/exp:channel:prev_entry}
+
+</div>
+
+
+<p><a href="{homepage}">&lt;&lt; Back to main</a></p>
+
+
+</div>
+	{embed="includes/.blogsidebar"}
+	<div class="clear"></div>
+</div>
+
+	{embed="includes/.footer"}
+{embed="includes/.analytics"}
+</body>
+</html>

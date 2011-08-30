@@ -1,0 +1,38 @@
+<div class="grid_4" id="blogsidebar">
+<div id="blogsidebarinner">
+
+	{embed="includes/.navigation"}
+
+	{if enablesidebarads == 'yes'}
+	{embed="includes/.ads"}
+	{/if}
+
+	{embed="includes/.mostrecent"}
+	
+	{if aboutauthor == 'yes'}
+		{embed="includes/.aboutauthor"}
+	{/if}
+
+	{if memberlinks == 'yes'}
+		{embed="includes/.memberlinks"}
+	{/if}
+
+	{if calendar == 'yes'}
+		{embed="includes/.calendar"}
+	{/if}
+
+	{embed="includes/.search"}
+
+	{embed="includes/.categories"}
+
+	{embed="includes/.archives"}
+
+	{if syndicate == 'yes'}
+		{embed="includes/.syndicate"}
+	{/if}
+
+	{if mailinglist == 'yes'}
+		{embed="includes/.mailinglist"}
+	{/if}
+	
+</div></div>

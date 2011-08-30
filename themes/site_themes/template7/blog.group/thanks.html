@@ -1,0 +1,79 @@
+	{embed="includes/.head"}
+	<title>{contacttitle}</title>
+
+</head>
+<body>
+
+{embed="includes/.header"}
+
+<div class="container_12" id="contentwrapper">
+	<div class="grid_8 content">
+		<div class="entry">
+			<h2 class="title">Thank you!</h2>
+			<p>Thank you for your contact form Submission. Someone will be with you shortly.</p>
+		</div>
+		<div class="entry" id="physicaladdress">
+			<h2>Physical Address</h2>
+			<p>{streetaddress}<br>
+			{city}, {state} {zip}</p>
+			{if phone}<p><strong>Phone:</strong> {phone}</p>{/if}
+			{if fax}<p><strong>Fax:</strong> {fax}</p>{/if}
+			{if emailaddress}<p><strong>Email:</strong> {encode="{emailaddress}"}</p>{/if}
+		</div>
+		<div class="entry" id="socialmedia">
+			<h2>Social Media</h2>
+			<ul>
+			{if twitter}<li id="twitter"><a href="{twitter}"><img src="{site_url}images/twitter.png"><span>Twitter</span></a></li>{/if}
+			{if facebook}<li id="facebook"><a href="{facebook}"><img src="{site_url}images/facebook.png"><span>Facebook</span></a></li>{/if}
+			{if myspace}<li id="myspace"><a href="{myspace}"><img src="{site_url}images/myspace.png"><span>Myspace</span></a></li>{/if}
+			{if linkedin}<li id="linkedin"><a href="{linkedin}"><img src="{site_url}images/linkedin.png"><span>LinkedIn</span></a></li>{/if}
+			{if youtube}<li id="youtube"><a href="{youtube}"><img src="{site_url}images/youtube.png"><span>Youtube</span></a></li>{/if}
+			{if plaxo}<li id="vimeo"><a href="{vimeo}"><img src="{site_url}images/vimeo.png"><span>Vimeo</span></a></li>{/if}
+			</ul>
+		</div>
+
+		<div class="entry">
+			<h2>Contact Form</h2>
+			<p>Please fill-in the following fields:</p>
+			{exp:freeform:form form_name="default_form" return="blog/thanks" notify="" template="default_template" required="firstname|lastname|email|message"}
+			<div id="customform">
+			<table width="100%">
+				<tr>
+					<td width="100%"><input type="text" name="firstname" value="" /><label><span class="requiredfield">*</span>First Name:</label></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="lastname" value="" /><label><span class="requiredfield">*</span>Last Name:</label></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="email" value="" /><label><span class="requiredfield">*</span>Email Address:</label></td>
+				</tr>
+				<tr>
+					<td>
+						<textarea rows="5" cols="50" type="text" name="message" value="" /></textarea><label><span class="requiredfield">*</span>Message:</label>
+					</td>
+				</tr>
+			</table>
+
+
+
+
+			{if captcha}
+			<p>Please enter the word you see in the image below:</p>
+			<p>{captcha}<br />
+			<input id="captcha" type="text" name="captcha" value="" maxlength="20" /></p>
+			{/if}
+
+			<p>
+			<input type="submit" name="submit" id="contactsubmit" value="submit" />
+			</p>
+			</div>
+			{/exp:freeform:form}
+		</div>
+	</div>
+	{embed="includes/.blogsidebar"}
+	<div class="clear"></div>
+</div>
+{embed="includes/.footer"}
+{embed="includes/.analytics"}
+</body>
+</html>
