@@ -4,8 +4,6 @@ Thank you for using Template7 from EETemplates.com. I hope that you find this te
 
 Included in this package you should see the following:
 
-License.txt - You can't resell or redistribute this template
-
 Read Me.txt - You are reading this  ;-)
 
 css - This folder contains all of the css files necessary for the template to work. If you do not currently have a folder on your hosting named css then you should be ok to just upload the entire folder into the root of your hosting. BE SURE YOU ARE NOT OVERWRITING ANYTHING IMPORTANT! 
