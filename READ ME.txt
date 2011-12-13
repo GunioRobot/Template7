@@ -1,4 +1,6 @@
-First let me thank you for downloading Template7 from EETemplates.com. I hope that you find this template helpful in getting you started in the wonderful world of ExpressionEngine. 
+Template7 is released under the MIT License.
+
+Thank you for using Template7 from EETemplates.com. I hope that you find this template helpful in getting you started in the wonderful world of ExpressionEngine. 
 
 Included in this package you should see the following:
 
