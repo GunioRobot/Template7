@@ -1,16 +1,16 @@
 Template7 is released under the MIT License.
 
-Thank you for using Template7 from EETemplates.com. I hope that you find this template helpful in getting you started in the wonderful world of ExpressionEngine. 
+Thank you for using Template7 from EETemplates.com. I hope that you find this template helpful in getting you started in the wonderful world of ExpressionEngine.
 
 Included in this package you should see the following:
 
 Read Me.txt - You are reading this  ;-)
 
-css - This folder contains all of the css files necessary for the template to work. If you do not currently have a folder on your hosting named css then you should be ok to just upload the entire folder into the root of your hosting. BE SURE YOU ARE NOT OVERWRITING ANYTHING IMPORTANT! 
+css - This folder contains all of the css files necessary for the template to work. If you do not currently have a folder on your hosting named css then you should be ok to just upload the entire folder into the root of your hosting. BE SURE YOU ARE NOT OVERWRITING ANYTHING IMPORTANT!
 
-images - This folder contains all of the images for the template to work. Since you probably have a folder named images on your hosting it is best if you just upload the contents of this folder into the existing images folder on your server. Your uploads directory should be empty if it is a new install of EE so you can overwrite that folder. BE SURE YOU ARE NOT OVERWRITING ANYTHING IMPORTANT! 
+images - This folder contains all of the images for the template to work. Since you probably have a folder named images on your hosting it is best if you just upload the contents of this folder into the existing images folder on your server. Your uploads directory should be empty if it is a new install of EE so you can overwrite that folder. BE SURE YOU ARE NOT OVERWRITING ANYTHING IMPORTANT!
 
-themes - make sure to upload the folder located in the themes/site_themes folder (themes/site_themes/template7 for instance) prior to trying to install EE. 
+themes - make sure to upload the folder located in the themes/site_themes folder (themes/site_themes/template7 for instance) prior to trying to install EE.
 
 Required Plugins - This template requires 1 free plugin and a module. Word Limiter from EllisLab and FreeForm from Solspace. You can find them at the following links:
 

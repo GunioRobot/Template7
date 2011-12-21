@@ -39,4 +39,4 @@ $no_access = array(
 
 $template_access['includes']['index'] = $no_access;
 $template_access['search']['index'] = $no_access;
-				
+
